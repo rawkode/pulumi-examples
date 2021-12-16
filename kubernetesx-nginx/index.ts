@@ -10,6 +10,11 @@ const nginxPod = new kx.PodBuilder({
 });
 
 const nginxDeployment = new kx.Deployment("nginx", {
+  metadata: {
+    labels: {
+      owner: "team-platform",
+    },
+  },
   spec: nginxPod.asDeploymentSpec(),
 }).createService({
   ports: [{ port: 80, targetPort: 80 }],
