@@ -1,0 +1,11 @@
+config:
+  structured-config-ts:clusters:
+    - name: rawkode-1
+      bottleRocketVersion: 1.2.3
+      diskSizeGB: 100
+      instanceTypes:
+        - m5.xlarge
+      minSize: 1
+      maxSize: 2
+      desiredSize: 2
+      maxUnavailable: 1
